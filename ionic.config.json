@@ -1,0 +1,7 @@
+{
+  "name": "Biblioteca",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

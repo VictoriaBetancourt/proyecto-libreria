@@ -1,0 +1,125 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-title>Portal de reportes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" color="light">
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-button>
+      <ion-button id="admin-btn">Admin</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="dashboard-bg">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="3">
+        <ion-card class="stat-card">
+          <p class="label">Reportes generados</p>
+          <h2 class="value">128</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="3">
+        <ion-card class="stat-card">
+          <p class="label">Pendientes por revisar</p>
+          <h2 class="value">07</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="3">
+        <ion-card class="stat-card">
+          <p class="label">PDF exportados</p>
+          <h2 class="value">95</h2>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="3">
+        <ion-card class="stat-card">
+          <p class="label">Último informe</p>
+          <h2 class="value-date">Hoy 18:45</h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" size-md="8">
+        <ion-card class="main-card">
+          <ion-card-header>
+            <ion-card-title>Tipos de reportes</ion-card-title>
+            <div class="tab-group">
+              <ion-button size="small" color="primary">Almacen</ion-button>
+              <ion-button size="small"  color="primary">Ventas</ion-button>
+              <ion-button size="small"  color="primary">Asistencias</ion-button>
+            </div>
+          </ion-card-header>
+          
+          <ion-card-content>
+            <p class="section-subtitle">Filtros y parametros</p>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item class="custom-input" lines="none">
+                  <ion-label position="stacked">Libro / titulo</ion-label>
+                  <ion-input placeholder="Buscar libro..."></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item class="custom-input" lines="none">
+                  <ion-label position="stacked">Genero</ion-label>
+                  <ion-select placeholder="Todos / Novela / Historia">
+                    <ion-select-option value="novela">Novela</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item class="custom-input" lines="none">
+                  <ion-label position="stacked">Periodo</ion-label>
+                  <ion-datetime placeholder="Desde / hasta"></ion-datetime>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <div class="btn-footer">
+              <ion-button color="primary" class="apply-btn">Aplicar filtros</ion-button>
+              <ion-button fill="clear" color="light">Limpiar</ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-md="4">
+        <ion-card class="main-card actions-panel">
+          <p class="section-subtitle">Acciones del modulo</p>
+          <ion-button expand="block" color="success">Generar Informe</ion-button>
+          <ion-button expand="block" color="danger" class="btn-pink">Exportar PDF</ion-button>
+          <ion-button expand="block" fill="clear" color="light">Descargar CSV</ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-card class="main-card">
+          <p class="section-subtitle">Resultados y vista previa</p>
+          <ion-row>
+            <ion-col size="6" class="chart-placeholder">
+              <p>Grafica / resumen visual</p>
+            </ion-col>
+            <ion-col size="6">
+              <table class="results-table">
+                <thead>
+                  <tr>
+                    <th>Genero</th>
+                    <th>Existencia</th>
+                    <th>Disponible</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Novela</td><td>100</td><td>80</td><td>20</td></tr>
+                  <tr><td>Historia</td><td>60</td><td>45</td><td>15</td></tr>
+                  <tr><td>Ciencia</td><td>40</td><td>30</td><td>10</td></tr>
+                </tbody>
+              </table>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

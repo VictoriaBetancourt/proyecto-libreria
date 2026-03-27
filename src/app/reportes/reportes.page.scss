@@ -1,0 +1,71 @@
+.dashboard-bg {
+  --background: #0f1014;
+}
+
+// Tarjetas Superiores
+.stat-card {
+  background: #1c1e26;
+  border: 1px solid #2d303a;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 5px;
+  
+  .label { color: #a0a4b1; font-size: 0.8rem; margin: 0; }
+  .value { color: #fff; font-size: 2rem; margin: 10px 0 0 0; font-weight: bold; }
+  .value-date { color: #fff; font-size: 1.2rem; margin-top: 15px; }
+}
+
+// Tarjetas Principales
+.main-card {
+  background: #1c1e26;
+  border-radius: 20px;
+  border: 1px solid #2d303a;
+  padding: 15px;
+  color: white;
+}
+
+.section-subtitle {
+  color: #a0a4b1;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+// Inputs Estilo Dark
+.custom-input {
+  --background: #121317;
+  --color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #2d303a;
+  ion-label { color: #6e727d !important; }
+}
+
+// Botones y Tablas
+.tab-group { display: flex; gap: 10px; margin-top: 10px; }
+.btn-footer { display: flex; justify-content: flex-end; margin-top: 10px; }
+.btn-pink { --background: #ff8080; color: black; }
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #a0a4b1;
+  font-size: 0.85rem;
+  th { text-align: left; padding: 10px; border-bottom: 1px solid #2d303a; }
+  td { padding: 10px; }
+}
+
+.chart-placeholder {
+  border: 2px dashed #2d303a;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  color: #4a4d58;
+}
+
+#admin-btn {
+  --background: #2d303a;
+  --border-radius: 8px;
+  font-size: 0.8rem;
+}
