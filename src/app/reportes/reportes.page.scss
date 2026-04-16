@@ -1,71 +1,211 @@
-.dashboard-bg {
-  --background: #0f1014;
+/* Fondo General Suave */
+.sponchi-bg {
+  --background: #f4f7f9;
 }
 
-// Tarjetas Superiores
-.stat-card {
-  background: #1c1e26;
-  border: 1px solid #2d303a;
-  border-radius: 12px;
+/* Encabezado Amigable */
+.sponchi-header ion-toolbar {
+  --background: #ffffff;
+  --box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.title-bubbly {
+  font-weight: 800;
+  color: #2c3e50;
+  letter-spacing: 0.5px;
+}
+
+.btn-sponchi {
+  --border-radius: 20px;
+  font-weight: bold;
+}
+
+/* Contenedor de KPIs (Scroll horizontal en móviles) */
+.kpi-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 20px;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+.kpi-container::-webkit-scrollbar { 
+  display: none; 
+}
+
+/* Tarjetas KPI Sponchi */
+.kpi-card {
+  min-width: 140px;
+  flex: 1;
+  background: white;
+  border-radius: 24px;
   padding: 15px;
-  margin: 5px;
-  
-  .label { color: #a0a4b1; font-size: 0.8rem; margin: 0; }
-  .value { color: #fff; font-size: 2rem; margin: 10px 0 0 0; font-weight: bold; }
-  .value-date { color: #fff; font-size: 1.2rem; margin-top: 15px; }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  }
+
+  .icon-bubble {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  h3 { margin: 0; font-size: 1.8rem; font-weight: 800; color: #2c3e50; }
+  p { margin: 5px 0 0; font-size: 0.85rem; color: #7f8c8d; font-weight: 600; }
 }
 
-// Tarjetas Principales
-.main-card {
-  background: #1c1e26;
-  border-radius: 20px;
-  border: 1px solid #2d303a;
-  padding: 15px;
-  color: white;
+/* Colores Sponchi para iconos */
+.sponchi-blue .icon-bubble { background: #e0f2fe; color: #0ea5e9; }
+.sponchi-pink .icon-bubble { background: #fce7f3; color: #ec4899; }
+.sponchi-mint .icon-bubble { background: #dcfce7; color: #10b981; }
+.sponchi-orange .icon-bubble { background: #ffedd5; color: #f97316; }
+
+/* Animación de Flotación */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0px); }
 }
 
-.section-subtitle {
-  color: #a0a4b1;
-  font-size: 0.9rem;
+/* Selector de Categorías (Píldoras) */
+.category-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 20px 10px;
+
+  .pill {
+    background: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    color: #95a5a6;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    &.active {
+      background: #6366f1;
+      color: white;
+      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* Paneles Principales (Tarjetas anchas) */
+.sponchi-panel {
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  margin: 15px 20px;
+  background: white;
+}
+
+.panel-title {
+  font-weight: 800;
+  color: #2c3e50;
+  font-size: 1.2rem;
   margin-bottom: 15px;
 }
 
-// Inputs Estilo Dark
-.custom-input {
-  --background: #121317;
-  --color: white;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #2d303a;
-  ion-label { color: #6e727d !important; }
+/* Input burbuja */
+/* Input burbuja */
+.bubbly-input {
+  --background: #f8fafc;
+  border-radius: 16px;
+  --padding-start: 15px;
+  border: 1px solid #e2e8f0;
+  transition: border-color 0.3s;
+
+  /* Agrega estas líneas para forzar el color del texto a un azul oscuro/gris */
+  --color: #2c3e50 !important;
+  color: #2c3e50 !important;
+
+  &:focus-within {
+    border-color: #6366f1;
+  }
 }
 
-// Botones y Tablas
-.tab-group { display: flex; gap: 10px; margin-top: 10px; }
-.btn-footer { display: flex; justify-content: flex-end; margin-top: 10px; }
-.btn-pink { --background: #ff8080; color: black; }
-
-.results-table {
-  width: 100%;
-  border-collapse: collapse;
-  color: #a0a4b1;
-  font-size: 0.85rem;
-  th { text-align: left; padding: 10px; border-bottom: 1px solid #2d303a; }
-  td { padding: 10px; }
+/* Y por si Ionic se pone terco con el componente interno, agregamos esto justo debajo: */
+.bubbly-input ion-input {
+  --color: #2c3e50 !important;
 }
 
-.chart-placeholder {
-  border: 2px dashed #2d303a;
-  border-radius: 15px;
+/* --- Estilos para el Buscador Sponchi --- */
+.search-sponchi {
   display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  height: 150px;
-  color: #4a4d58;
+
+  .filter-box {
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+  }
+
+  .search-box {
+    flex: 3;
+    min-width: 250px;
+  }
 }
 
-#admin-btn {
-  --background: #2d303a;
-  --border-radius: 8px;
-  font-size: 0.8rem;
+.search-box:focus-within {
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Tabla Sponchi */
+.table-container {
+  overflow-x: auto;
+}
+
+.sponchi-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  
+  th {
+    text-align: left;
+    padding: 10px 15px;
+    color: #94a3b8;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+
+  td {
+    padding: 12px 15px;
+    background: #f8fafc;
+    color: #334155;
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    &:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+    &:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+  }
+
+  tr {
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
 }
